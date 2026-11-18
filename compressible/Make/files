@@ -1,0 +1,3 @@
+turbulentFluidThermoModels/SSGLRROmega2019Compressible.C
+
+LIB = $(FOAM_USER_LIBBIN)/libSSGLRROmega2019CompressibleTurbulenceModel

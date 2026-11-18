@@ -1,0 +1,11 @@
+#!/bin/bash
+cd "${0%/*}" || exit   # Run from this directory
+. "${WM_PROJECT_DIR:?}"/wmake/scripts/AllwmakeParseArguments
+#------------------------------------------------------------------------------
+
+wmakeLnInclude -u turbulenceModels
+
+wmake $targetType compressible
+wmake $targetType incompressible
+
+#------------------------------------------------------------------------------
