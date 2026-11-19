@@ -87,6 +87,8 @@ divSchemes
 }
 ```
 
+`bounded` is only needed for RANS. For URANS, it can be left out.
+
 ## Model coefficients
 
 All coefficients are optional. The defaults below are the published values, and they can be changed in the
