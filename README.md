@@ -1,15 +1,12 @@
 # SSG/LRR-omega Reynolds-stress model for OpenFOAM
 
 Implementation of the SSG/LRR-omega differential Reynolds-stress model with the 2019 length-scale
-correction and simple diffusion (**SSGLRR-RSM-w2019-SD**) in OpenFOAM. The model solves six transport
-equations for the Reynolds stresses and one BSL omega equation.
+correction and simple diffusion (**SSGLRR-RSM-w2019-SD**) in OpenFOAM. The model solves six transport equations for the Reynolds stresses and one BSL omega equation.
 
 The implementation follows the definition on the
-[Turbulence Modeling Resource](https://tmbwg.github.io/turbmodels/rsm-ssglrr.html). The equations as
-implemented are collected in [equations.md](equations.md).
+[Turbulence Modeling Resource](https://tmbwg.github.io/turbmodels/rsm-ssglrr.html). The equations as implemented are collected in [equations.md](equations.md).
 
-The model was developed with OpenFOAM v2512 (openfoam.com) and used with the compressible library on the
-2D zero-pressure-gradient flat plate. The incompressible library compiles, but it has not been validated.
+The model was developed with OpenFOAM v2512 (openfoam.com) and used with the compressible library on the 2D zero-pressure-gradient flat plate.
 
 ## Installation
 
@@ -19,8 +16,7 @@ To compile the model, execute:
 ./Allwmake
 ```
 
-Once compiled, you should see `libSSGLRROmega2019CompressibleTurbulenceModel.so` and
-`libSSGLRROmega2019IncompressibleTurbulenceModel.so` in `$FOAM_USER_LIBBIN`.
+Once compiled, you should see `libSSGLRROmega2019CompressibleTurbulenceModel.so` in `$FOAM_USER_LIBBIN`.
 
 To remove the compiled libraries and build files, execute:
 
@@ -30,16 +26,10 @@ To remove the compiled libraries and build files, execute:
 
 ## Setting up a case
 
-Add the library to `system/controlDict`. For compressible solvers:
+Add the library to `system/controlDict`:
 
 ```foam
 libs    ("libSSGLRROmega2019CompressibleTurbulenceModel.so");
-```
-
-For incompressible solvers:
-
-```foam
-libs    ("libSSGLRROmega2019IncompressibleTurbulenceModel.so");
 ```
 
 Select the model in `constant/turbulenceProperties`:
@@ -83,7 +73,7 @@ reproduces that value.
 
 ### Discretisation schemes
 
-Compressible solvers need the following entries in `system/fvSchemes`, in addition to the schemes of the
+The model needs the following entries in `system/fvSchemes`, in addition to the schemes of the
 flow solver:
 
 ```foam

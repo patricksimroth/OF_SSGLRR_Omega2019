@@ -2,8 +2,7 @@
 
 This document summarizes the equations implemented by `SSGLRROmega2019`. They are written in the form used
 in the code, with the kinematic Reynolds stress $R_{ij}$ and the turbulent kinetic energy $k = R_{ii}/2$.
-OpenFOAM's phase-fraction factor and the source terms from `fvOptions` are omitted. For incompressible usage,
-the density $\rho$ is effectively one.
+OpenFOAM's phase-fraction factor and the source terms from `fvOptions` are omitted.
 
 ## Blending
 

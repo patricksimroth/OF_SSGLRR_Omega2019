@@ -34,7 +34,7 @@ Group
 Description
     SSG/LRR-omega differential Reynolds-stress turbulence model with the 2019
     length-scale correction and simple diffusion (SSGLRR-RSM-w2019-SD) for
-    incompressible and compressible flows.
+    compressible flows.
 
     The coefficients blend from the LRR set near the wall to the SSG set in
     the outer flow with Menter's BSL function F1, phi = F1*phiLRR

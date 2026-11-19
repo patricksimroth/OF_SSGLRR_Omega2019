@@ -3,6 +3,4 @@
 __pycache__/
 /turbulenceModels/lnInclude/
 /compressible/lnInclude/
-/incompressible/lnInclude/
 /compressible/Make/*/
-/incompressible/Make/*/

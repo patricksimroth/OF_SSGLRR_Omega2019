@@ -6,6 +6,5 @@ cd "${0%/*}" || exit   # Run from this directory
 wmakeLnInclude -u turbulenceModels
 
 wmake $targetType compressible
-wmake $targetType incompressible
 
 #------------------------------------------------------------------------------

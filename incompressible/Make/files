@@ -1,3 +1,0 @@
-turbulentTransportModels/SSGLRROmega2019Incompressible.C
-
-LIB = $(FOAM_USER_LIBBIN)/libSSGLRROmega2019IncompressibleTurbulenceModel

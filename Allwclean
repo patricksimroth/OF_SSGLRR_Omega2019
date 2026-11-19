@@ -3,7 +3,6 @@ cd "${0%/*}" || exit   # Run from this directory
 #------------------------------------------------------------------------------
 
 wclean compressible
-wclean incompressible
 
 rm -rf turbulenceModels/lnInclude
 
