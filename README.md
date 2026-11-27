@@ -68,8 +68,9 @@ wall
 ```
 
 The Turbulence Modeling Resource prescribes `omega_wall = 10*6*nu/(beta_1*d^2)` with `beta_1 = 0.075`.
-`omegaWallFunction` evaluates `6*nu/(beta1*d^2)` below the laminar sublayer limit, so `beta1 0.0075`
-reproduces that value.
+With `blending stepwise`, `omegaWallFunction` evaluates `6*nu/(beta1*d^2)` below the laminar sublayer limit,
+so `beta1 0.0075` reproduces that value. Set `blending stepwise` explicitly: without it, `omegaWallFunction`
+uses `binomial` blending.
 
 ### Discretisation schemes
 
@@ -137,8 +138,9 @@ RAS
 
 ## Differences from the published model
 
-- The production in the omega equation uses `G = 0.5*mag(tr(P))` instead of `0.5*tr(P)`, which keeps it
-  non-negative.
+- `G = 0.5*mag(tr(P))` is used instead of the signed `0.5*tr(P)`, as in OpenFOAM's `LRR` and `SSG` models.
+  `G` is non-negative and enters both the production term of the omega equation and the slow part of the
+  pressure-strain correlation, `-(C1*epsilon + C1s*G)*a`.
 - After the normal stresses have been bounded, the shear stresses are clipped to the realizable range
   `|Rij| <= sqrt(Rii*Rjj)`. Without this limit, cells with clipped normal stresses can diverge on
   unstructured meshes.
